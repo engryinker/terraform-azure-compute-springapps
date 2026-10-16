@@ -4,13 +4,13 @@ Org-standard Terraform wrapper for **Azure Spring Apps (Spring Cloud) services**
 
 ⚠️ **No AVM module exists for this resource** as of this writing. Every other repo in this org's module set wraps an official Azure Verified Module; this one wraps the native `azurerm_spring_cloud_service` resource directly, following the same conventions (`resource_group_name`/`location`/`tags` at the module level, a `map(object(...))` of instances). Swap this for an AVM module if/when Microsoft publishes one for Azure Spring Apps.
 
-Deploys into an existing resource group -- this module does not create the resource group itself. Compose with [terraform-azure-naming](https://github.com/<org>/terraform-azure-naming) and [terraform-azure-tags](https://github.com/<org>/terraform-azure-tags).
+Deploys into an existing resource group -- this module does not create the resource group itself. Compose with [terraform-azure-naming](https://github.com/engryinker/terraform-azure-naming) and [terraform-azure-tags](https://github.com/engryinker/terraform-azure-tags).
 
 ## Usage
 
 ```hcl
 module "springapps" {
-  source = "git::https://github.com/<org>/terraform-azure-compute-springapps.git?ref=v1.0.0"
+  source = "git::https://github.com/engryinker/terraform-azure-compute-springapps.git?ref=v1.0.0"
 
   resource_group_name = azurerm_resource_group.this.name
   location             = azurerm_resource_group.this.location
